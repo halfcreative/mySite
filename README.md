@@ -1,27 +1,29 @@
-# MySite
+# Portfolio Site
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.4.
+This is Sam's Portfolio Site, intended to show off my skills as a programmer.
 
-## Development server
+There are 3 main views to the site -
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+* Home
+  * The landing page with short, eye catching, and descriptive attributes of myself
+* Projects
+  * A page with a list of projects I've made with short descriptions and a link to their repositories
+* Contact
+  * A page consisting of imformation regarding how to contact me, as well as some links to my github and social media accounts
 
-## Code scaffolding
+In creating this site, I would like to learn and showcase Angular animations along with a consistent, appealing, and easy to use design scheme.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# Ideas to expand upon
 
-## Build
+I would like this website to be a comprehensive showcase of my compentancy/expertise in development. To do so, the site should be updated and expanded upon to showcase my full skillset
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Some ideas for future development include -
 
-## Running unit tests
+* ECMAScript Arcade
+  * A page consisting of various small games created in ES
+    * Simon, Speed-Math, etc...
+  * These games could possibly maintain a leaderboard of scores achieved in the game
+* Useful ES Tools
+  * Pay calculator with state and federal tax
+  * Pomodoro Timer
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
