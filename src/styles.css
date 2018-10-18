@@ -1,5 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,100i,400,400i,700');
+
 body {
-    background-color:#3E4551;
-    color:white;
+    background-color: #3E4551;
+    color: white;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+router-outlet~* {
+    position: absolute;
 }

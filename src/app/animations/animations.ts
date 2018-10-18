@@ -2,52 +2,26 @@ import { trigger, transition, style, query, animateChild, group, animate } from 
 
 export const fadeAnimation =
     trigger('routeAnimations', [
-        transition('HomePage <=> ProjectsPage', [
-            style({ position: 'relative' }),
-            query(':enter, :leave', [
-                style({
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    width: '100%'
-                })
-            ]),
-            query(':enter', [
-                style({ left: '-100%' })
-            ]),
-            query(':leave', animateChild()),
-            group([
-                query(':leave', [
-                    animate('300ms ease-out', style({ left: '100%' }))
-                ]),
-                query(':enter', [
-                    animate('300ms ease-out', style({ left: '0%' }))
-                ])
-            ]),
-            query(':enter', animateChild()),
-        ]),
-        transition('* <=> ContactPage', [
-            style({ position: 'relative' }),
-            query(':enter, :leave', [
-                style({
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    width: '100%'
-                })
-            ]),
-            query(':enter', [
-                style({ left: '-100%' })
-            ]),
-            query(':leave', animateChild()),
-            group([
-                query(':leave', [
-                    animate('300ms ease-out', style({ left: '100%' }))
-                ]),
-                query(':enter', [
-                    animate('300ms ease-out', style({ left: '0%' }))
-                ])
-            ]),
-            query(':enter', animateChild()),
+        // The '* => *' will trigger the animation to change between any two states
+        // Can set specific transition between differnt pages like the HomePage and ContactPage
+        transition('* => *', [
+            query(
+                ':enter',
+                // View that is entering gets an opacity of 0 to start.
+                [style({ opacity: 0 })],
+                { optional: true }
+            ),
+            query(
+                ':leave',
+                // Sets opacity to 0, over .3 seconds
+                [style({ opacity: 1 }), animate('0.3s', style({ opacity: 0 }))],
+                { optional: true }
+            ),
+            query(
+                ':enter',
+                // View that is entering will get it's opacity set to 1 over .3 seconds AFTER the leave gets animated out.
+                [style({ opacity: 0 }), animate('0.3s', style({ opacity: 1 }))],
+                { optional: true }
+            )
         ])
     ]);

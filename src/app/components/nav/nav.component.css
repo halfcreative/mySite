@@ -1,0 +1,12 @@
+#navTitle{
+    font-weight: 700;
+}
+li a {
+    font-weight: 100;
+}
+li a:hover {
+    font-style: italic;
+}
+.navbar-text {
+    font-size: .75rem;
+}

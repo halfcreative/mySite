@@ -3,7 +3,7 @@
   <!-- use this container to get the navbar content away from edge -->
   <div class="container">
     <!-- The "brand" goes here -->
-    <a class="navbar-brand" routerLink="/home">SAM</a>
+    <a class="navbar-brand" routerLink="/home" id="navTitle">SAM</a>
     <!-- Button for expanding the navigation options when collapsed -->
     <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed"
       aria-controls="navbar">
@@ -11,7 +11,7 @@
     </button>
     <!-- Navbar Links -->
     <div class="navbar-collapse" [ngbCollapse]="!isCollapsed">
-      <ul class="nav navbar-nav ">
+      <ul class="nav navbar-nav mr-auto">
         <li class="nav-item">
           <a class="nav-link" routerLink="/home" routerLinkActive="active">HOME</a>
         </li>
@@ -22,6 +22,9 @@
           <a class="nav-link" routerLink="/contact" routerLinkActive="active">CONTACT</a>
         </li>
       </ul>
+      <span class="navbar-text">
+        {{pageQuote | async}}
+      </span>
     </div>
     <!-- Designed by Alan Sato, utilizing Bootstrap 4.1 -->
   </div>
