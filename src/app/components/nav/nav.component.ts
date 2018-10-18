@@ -10,6 +10,7 @@ import { Observable, Subscription, of } from 'rxjs';
 
 export class NavComponent implements OnInit {
 
+  // Array of quotes for each page. Take an observable of the quote selected and display it on navbar on page change
   quotes: String[][] =
     [
       ['Hello World.', 'Welcome to my site!', 'Sam\'s portfolio.'], // Quotes for Home
