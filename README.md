@@ -19,6 +19,8 @@ I would like this website to be a comprehensive showcase of my compentancy/exper
 
 Some ideas for future development include -
 
+* Skills page
+* Work History page
 * ECMAScript Arcade
   * A page consisting of various small games created in ES
     * Simon, Speed-Math, etc...
