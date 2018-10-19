@@ -1,4 +1,4 @@
 <app-nav></app-nav>
-<div class="container" [@routeAnimations]=" outlet.isActivated ? prepareRoute(outlet) : '' " >
+<div class="container" id="mainCont" [@routeAnimations]=" outlet.isActivated ? prepareRoute(outlet) : '' " >
   <router-outlet #outlet="outlet"></router-outlet>
 </div>

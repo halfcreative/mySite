@@ -1,0 +1,10 @@
+hr {
+    height: 5px;
+    border-color: whitesmoke;
+    background-color: whitesmoke;
+    color: whitesmoke;
+}
+
+p {
+    text-indent: 3rem;
+}
