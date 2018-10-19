@@ -1,15 +1,6 @@
-hr {
-    height: 5px;
-    border-color: whitesmoke;
-    background-color: whitesmoke;
-    border-radius: 7px 7px 7px 7px;
-    color: whitesmoke;
-}
-
 p {
     text-indent: 3rem;
 }
-
 a {
     color: inherit;
     text-decoration: none;
