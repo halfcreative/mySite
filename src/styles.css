@@ -16,6 +16,9 @@ hr {
     color: whitesmoke;
 }
 
+.wholepagewrapper {
+    overflow-x: hidden;
+}
 .card {
     margin-bottom: 1rem;
 }
