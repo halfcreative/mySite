@@ -5,6 +5,7 @@ body {
     background-color: #3E4551;
     color: white;
     font-family: 'IBM Plex Sans', sans-serif;
+    overflow-x: hidden; 
 }
 
 hr {
@@ -15,6 +16,12 @@ hr {
     color: whitesmoke;
 }
 
+.card {
+    margin-bottom: 1rem;
+}
+app-root {
+    overflow-x: hidden;
+}
 router-outlet~* {
     position: absolute;
 }
