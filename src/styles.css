@@ -16,14 +16,8 @@ hr {
     color: whitesmoke;
 }
 
-.wholepagewrapper {
-    overflow-x: hidden;
-}
 .card {
     margin-bottom: 1rem;
-}
-app-root {
-    overflow-x: hidden;
 }
 router-outlet~* {
     position: absolute;
