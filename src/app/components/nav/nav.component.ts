@@ -17,6 +17,7 @@ export class NavComponent implements OnInit {
     [
       ['Hello World.', 'Welcome to my site!', 'Sam\'s portfolio.'], // Quotes for Home
       ['My project showcase.', 'Some of my best works.', 'Showing you what I\'ve got.'], // Quotes for Projects
+      ['See where I\'ve been!', 'My work history.'], // Quotes for Work History
       ['Get in touch with me!', 'Here\'s my number, call me maybe.', 'Feel free to contact me.',
        'Send something nice!', 'No spam please!']  // Quotes for Contact
     ];
@@ -34,8 +35,11 @@ export class NavComponent implements OnInit {
           case '/projects':
             this.pageQuote = of(this.quotes[1][Math.floor(Math.random() * this.quotes[1].length)]);
             break;
-          case '/contact':
+          case '/history':
             this.pageQuote = of(this.quotes[2][Math.floor(Math.random() * this.quotes[2].length)]);
+            break;
+          case '/contact':
+            this.pageQuote = of(this.quotes[3][Math.floor(Math.random() * this.quotes[3].length)]);
             break;
         }
       }
