@@ -2,7 +2,7 @@
 
 This is Sam's Portfolio Site, intended to show off my skills as a programmer.
 
-There are 3 main views to the site -
+There are 4 main views to the site -
 
 * Home
   * The landing page with short, eye catching, and descriptive attributes of myself
