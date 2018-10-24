@@ -8,8 +8,11 @@ There are 3 main views to the site -
   * The landing page with short, eye catching, and descriptive attributes of myself
 * Projects
   * A page with a list of projects I've made with short descriptions and a link to their repositories
+* Work History page
+  * As the name states, a page with my work histroy
 * Contact
   * A page consisting of imformation regarding how to contact me, as well as some links to my github and social media accounts
+
 
 In creating this site, I would like to learn and showcase Angular animations along with a consistent, appealing, and easy to use design scheme.
 
@@ -20,7 +23,6 @@ I would like this website to be a comprehensive showcase of my compentancy/exper
 Some ideas for future development include -
 
 * Skills page
-* Work History page
 * ECMAScript Arcade
   * A page consisting of various small games created in ES
     * Simon, Speed-Math, etc...
