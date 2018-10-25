@@ -1,4 +1,5 @@
 <app-nav></app-nav>
-<div class="container" id="mainCont" [@routeAnimations]=" outlet.isActivated ? prepareRoute(outlet) : '' " >
+<div class="container" id="mainCont" [@routeAnimations]=" outlet.isActivated ? prepareRoute(outlet) : '' ">
+  <ngb-alert type="secondary">aasdf</ngb-alert>
   <router-outlet #outlet="outlet"></router-outlet>
 </div>

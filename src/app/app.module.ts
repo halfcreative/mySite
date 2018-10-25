@@ -4,12 +4,19 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 
+
 import { AppComponent } from './app.component';
 import { NavComponent } from './components/nav/nav.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { WorkHistoryComponent } from './components/work-history/work-history.component';
+import { AlertComponent } from './components/alert/alert.component';
+
+import { AlertService } from './services/alert.service';
+import { LoginComponent } from './components/login/login.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,15 +25,22 @@ import { WorkHistoryComponent } from './components/work-history/work-history.com
     HomeComponent,
     ProjectsComponent,
     ContactComponent,
-    WorkHistoryComponent
+    WorkHistoryComponent,
+    AlertComponent,
+    LoginComponent
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    BrowserAnimationsModule
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [AlertService,
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
