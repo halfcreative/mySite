@@ -64,7 +64,6 @@ export class NavComponent implements OnInit {
         this.devModeOn = true;
         this.alertService.devModeOn();
       }
-      console.log(this.clickCount);
     }
   }
 }
