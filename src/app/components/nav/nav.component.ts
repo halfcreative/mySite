@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { Observable, Subscription, of } from 'rxjs';
+import { AlertService } from 'src/app/services/alert.service';
 
 @Component({
   selector: 'app-nav',
@@ -19,14 +20,17 @@ export class NavComponent implements OnInit {
       ['My project showcase.', 'Some of my best works.', 'Showing you what I\'ve got.'], // Quotes for Projects
       ['See where I\'ve been!', 'My work history.'], // Quotes for Work History
       ['Get in touch with me!', 'Here\'s my number, call me maybe.', 'Feel free to contact me.',
-       'Send something nice!', 'No spam please!']  // Quotes for Contact
+       'Send something nice!', 'No spam please!'],  // Quotes for Contact
+      ['WHAT IS YOUR NAME?']
     ];
   pageQuote: Observable<String>;
+  
+  devModeOn:boolean = false;
+  clickCount:number = 0;
 
-  constructor(private router: Router) {
-
+  constructor(private router: Router, private alertService: AlertService) {
     // Sets a random quote associated with the page to the navigation bar text field
-    router.events.subscribe((event) => {
+    this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         switch (event.url) {
           case '/home':
@@ -41,6 +45,9 @@ export class NavComponent implements OnInit {
           case '/contact':
             this.pageQuote = of(this.quotes[3][Math.floor(Math.random() * this.quotes[3].length)]);
             break;
+          case '/login':
+            this.pageQuote = of(this.quotes[4][Math.floor(Math.random() * this.quotes[4].length)]);
+            break;
         }
       }
     });
@@ -50,4 +57,14 @@ export class NavComponent implements OnInit {
   ngOnInit() {
   }
 
+  click(){
+    if(this.clickCount<15){
+      this.clickCount+=1;
+      if(this.clickCount==15){
+        this.devModeOn = true;
+        this.alertService.devModeOn();
+      }
+      console.log(this.clickCount);
+    }
+  }
 }

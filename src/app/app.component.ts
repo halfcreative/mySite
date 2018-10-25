@@ -12,8 +12,6 @@ import { fadeAnimation } from './animations/animations';
   ]
 })
 export class AppComponent {
-  title = 'mySite';
-
   /**
    * prepareRoute will add animations to any changes in the router outlet
    * @param outlet
@@ -21,4 +19,5 @@ export class AppComponent {
   prepareRoute(outlet: RouterOutlet) {
     return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
   }
+
 }

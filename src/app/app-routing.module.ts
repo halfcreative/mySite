@@ -11,6 +11,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { WorkHistoryComponent } from './components/work-history/work-history.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path: 'projects', component: ProjectsComponent, data: { animation: 'ProjectsPage' }},
   {path: 'history', component: WorkHistoryComponent, data: {animation: 'HistoryPage'}},
   {path: 'contact', component: ContactComponent, data: { animation: 'ContactPage' }},
+  {path: 'login', component: LoginComponent, data: { animation: 'LoginPage' }},
   {path: '**', redirectTo: 'home', pathMatch: 'full'}
 ];
 
