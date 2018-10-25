@@ -5,7 +5,7 @@ li a {
     font-weight: 100;
 }
 li a:hover {
-    font-style: italic;
+    font-weight: bold;
 }
 .navbar-text {
     font-size: .75rem;
