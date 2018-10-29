@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { first } from 'rxjs/operators';
+import { Creds } from 'src/app/models/Creds';
 
 @Component({
   selector: 'app-login',
@@ -35,12 +36,13 @@ export class LoginComponent implements OnInit {
   get formy() { return this.loginForm.controls }
 
   onSubmit() {
+    //Creds= new Creds(this.loginForm.value);
     this.submitted = true;
     if (this.loginForm.invalid) {
       return;
     }
     this.loading = true;
-    this.authenticationService.login(this.loginForm.value).pipe(first()).subscribe(
+    this.authenticationService.login2(this.loginForm.value).pipe(first()).subscribe(
       data => {
         this.router.navigate([this.returnUrl]);
       },
