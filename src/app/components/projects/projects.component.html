@@ -55,5 +55,24 @@
       </div>
     </div>
 
+    <div *ngFor="let project of projects" class="col-md-4">
+      <div class="card bg-dark">
+        <div class="card-body">
+          <!-- Project Title-->
+          <h5 class="card-title">{{project.name}}</h5>
+          <!-- Technologies Used -->
+          <h6 class="card-subtitle mb-2 text-muted">
+            <ul class="list-inline">
+              <li class="list-inline-item" *ngFor="let tech of project.techs">{{tech.name}}</li>
+            </ul>
+          </h6>
+          <!-- Short Description -->
+          <p class="card-text">{{project.description}}</p>
+          <!-- Link -->
+          <a href="{{project.url}}" class="card-link" target="_blank">{{project.urlName}}</a>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
