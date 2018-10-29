@@ -15,7 +15,6 @@ export class ProjectsComponent implements OnInit {
   ngOnInit() {
     this.apiService.getUserProjects(1).subscribe((data: Array<Projects>) => {
       this.projects = data;
-      console.log(this.projects);
     });
   }
 

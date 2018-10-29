@@ -22,5 +22,8 @@ export class ApiService {
   getUserProjects(userId: number) {
     return this.httpClient.get(API_URL + '/projects/' + userId,httpOptions);
   }
+  getUserHistory(userId:number){
+    return this.httpClient.get(API_URL + '/history/' + userId,httpOptions);
+  }
 
 }
