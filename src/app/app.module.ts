@@ -17,6 +17,7 @@ import { AlertService } from './services/alert.service';
 import { LoginComponent } from './components/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ApiService } from './services/api.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,9 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     HttpClientModule
   ],
-  providers: [AlertService,
+  providers: [
+    AlertService,
+    ApiService
     ],
   bootstrap: [AppComponent]
 })
