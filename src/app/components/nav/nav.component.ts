@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { Observable, Subscription, of } from 'rxjs';
 import { AlertService } from 'src/app/services/alert.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-nav',
@@ -23,12 +24,13 @@ export class NavComponent implements OnInit {
        'Send something nice!', 'No spam please!'],  // Quotes for Contact
       ['WHAT IS YOUR NAME?']
     ];
-  pageQuote: Observable<String>;
+  pageQuote: Observable<String> = of('Hello World!');
   
   devModeOn:boolean = false;
+  loggedIn:Observable<boolean>;
   clickCount:number = 0;
 
-  constructor(private router: Router, private alertService: AlertService) {
+  constructor(private router: Router, private alertService: AlertService, private authService: AuthService) {
     // Sets a random quote associated with the page to the navigation bar text field
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
@@ -55,15 +57,20 @@ export class NavComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.loggedIn = this.authService.isLoggedIn;
   }
 
   click(){
     if(this.clickCount<15){
       this.clickCount+=1;
       if(this.clickCount==15){
+        this.authService.activateDevMode();
         this.devModeOn = true;
         this.alertService.devModeOn();
       }
     }
+  }
+  logoutButt(){
+    this.authService.logout();
   }
 }

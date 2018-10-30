@@ -24,8 +24,11 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/contact" routerLinkActive="active"><i class="fas fa-address-card" aria-hidden></i> CONTACT</a>
         </li>
-        <li *ngIf="devModeOn" class="nav-item">
-          <a class="nav-link" routerLink="/login" routerLinkActive="active"><i class="fas fa-sign-in-alt" aria-hidden></i> LOGIN</a>
+        <li *ngIf="devModeOn && !(loggedIn|async)" class="nav-item">
+          <a routerLink="/login"><button class="btn btn-dark"><i class="fas fa-sign-in-alt" aria-hidden></i> LOGIN</button></a>
+        </li>
+        <li *ngIf="(loggedIn|async)" class="nav-item">
+          <button class="btn btn-dark" (click)="logoutButt()"><i class="fas fa-sign-in-alt" aria-hidden></i>LOGOUT</button>
         </li>
       </ul>
       <!-- Random quote dependant on page -->

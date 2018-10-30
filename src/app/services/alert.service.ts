@@ -12,7 +12,7 @@ export class AlertService {
 
   constructor(private router: Router) {
     router.events.subscribe(event => {
-      if(event instanceof NavigationStart){
+      if (event instanceof NavigationStart) {
         if (this.keepAfterNavigationChange) {
           this.keepAfterNavigationChange = false;
         } else {
@@ -20,19 +20,23 @@ export class AlertService {
         }
       }
     });
-   }
+  }
 
-   devModeOn(){
-     this.keepAfterNavigationChange = false;
-     this.subject.next({ type: 'dark', text: 'You have activated Dev Mode. Login to make any changes'});
-   }
-   success(message: string, keepAfterNavigationChange = false) {
-     this.keepAfterNavigationChange = keepAfterNavigationChange;
-     this.subject.next({ type: 'success', text: message });
-   }
-   getMessage(): Observable<any> {
-     return this.subject.asObservable();
-   }
+  devModeOn() {
+    this.keepAfterNavigationChange = false;
+    this.subject.next({ type: 'dark', text: 'You have activated Dev Mode. Login to make any changes' });
+  }
+  success(message: string, keepAfterNavigationChange = false) {
+    this.keepAfterNavigationChange = keepAfterNavigationChange;
+    this.subject.next({ type: 'success', text: message });
+  }
+  getMessage(): Observable<any> {
+    return this.subject.asObservable();
+  }
+  fail(message: string, keepAfterNavigationChange = false) {
+    this.keepAfterNavigationChange = keepAfterNavigationChange;
+    this.subject.next({ type: 'danger', text: message });
+  }
 
 
 

@@ -18,9 +18,6 @@ const httpOptions = {
 })
 export class ApiService {
 
-
-
-
   constructor(private httpClient: HttpClient) { }
 
   getUserProjects(userId: number) {
