@@ -9,7 +9,7 @@ import { Projects } from 'src/app/models/Projects';
 })
 export class ProjectsComponent implements OnInit {
 
-  private projects = Array<Projects>();
+  public projects = Array<Projects>();
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {

@@ -9,7 +9,7 @@ import { History } from 'src/app/models/History';
 })
 export class WorkHistoryComponent implements OnInit {
 
-  private myhistory = Array<History>();
+  public myhistory = Array<History>();
 
   constructor(private apiService:ApiService) { }
 
