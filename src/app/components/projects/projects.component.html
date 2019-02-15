@@ -3,7 +3,7 @@
     <h1 class="display-1 d-inline">Projects</h1>
     <small class="d-inline"> - Code I've made or worked on</small>
   </div>
-  <hr />
+  <hr style="width: 100%" />
   <div class="row">
     <!-- Project Cards-->
     <!-- Add a new card for each project-->
@@ -22,6 +22,19 @@
           <p class="card-text">{{project.description}}</p>
           <!-- Link -->
           <a href="{{project.url}}" class="card-link" target="_blank">{{project.urlName}}</a>
+        </div>
+      </div>
+    </div>
+    <!-- New Project Button -->
+    <!-- display only when logged in -->
+    <div *ngIf="(loggedIn | async)" class="col-md-4 d-flex align-items-stretch">
+      <div class="card bg-dark">
+        <div class="card-body">
+          <h5 class="card-title">Add a new project</h5>
+          <h6 class="card-subtitle mb-2 text-muted"> Add a new project the web-portfolio using our online form</h6>
+          <p class="card-text" style="text-align: center">
+           <a (click)="newProjectButton()"><i class="fas fa-plus fa-8x"></i></a>
+          </p>
         </div>
       </div>
     </div>
